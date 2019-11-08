@@ -1,9 +1,11 @@
 require('dotenv').config()
 const express = require('express')
 const bodyParser = require('body-parser')
+const cors = require('cors')
 const app = express()
 const port = process.env.BACKEND_PORT || 8082
 
+app.use(cors())
 app.use(bodyParser.json())
 
 app.post('/api/login', function (req, res) {
